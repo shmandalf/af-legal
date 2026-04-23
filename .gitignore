@@ -1,0 +1,10 @@
+# Build artifacts (HTML generated locally or by GitHub Actions)
+/public/
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# IDE junk
+.vscode/
+.idea/

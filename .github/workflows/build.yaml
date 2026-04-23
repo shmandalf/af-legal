@@ -1,0 +1,35 @@
+name: 🐎 Build Legal.af
+
+on:
+  push:
+    branches: [ "main" ]
+    paths:
+      - 'terms/**.md'
+      - 'template/**.html'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Pandoc
+        run: sudo apt-get update && sudo apt-get install -y pandoc
+
+      - name: Build HTML pages
+        run: |
+          mkdir -p public/ru public/en public/cu
+          TEMPLATE=$(cat template/legal.html)
+
+          for LANG in ru en cu; do
+            echo "🐎 Building ${LANG}..."
+            CONTENT=$(pandoc terms/${LANG}.md -t html --wrap=none)
+            echo "${TEMPLATE//'{{CONTENT}}'/$CONTENT}" > public/${LANG}/index.html
+          done
+
+      - name: Upload artifact (ready HTML files)
+        uses: actions/upload-artifact@v4
+        with:
+          name: legal-af-html
+          path: public/

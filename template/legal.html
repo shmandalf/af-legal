@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LEGAL.AF · L3373.XYZ · KBL v3.0</title>
+    <meta
+      name="description"
+      content="Legal framework of the L3373.XYZ ecosystem. KBL v3.0 license, privacy policy, herd law."
+    />
+    <meta
+      name="keywords"
+      content="KBL, legal, license, herd law, privacy, terms"
+    />
+    <meta name="author" content="Centaur-Vova (Dmitry Shmanatov)" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+    <style>
+      :root {
+        --bg: #0c0c0c;
+        --surface: #141414;
+        --text: #eaeaea;
+        --text-dim: #888;
+        --border: #2a2a2a;
+        --glow: #10b981;
+        --glow-soft: rgba(16, 185, 129, 0.15);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: var(--bg);
+        color: var(--text);
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Cascadia Code", monospace;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 16px;
+        line-height: 1.6;
+      }
+
+      /* Subtle texture */
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: radial-gradient(
+          rgba(255, 255, 255, 0.02) 1px,
+          transparent 1px
+        );
+        background-size: 32px 32px;
+        pointer-events: none;
+      }
+
+      .container {
+        max-width: 720px;
+        width: 100%;
+        background: var(--surface);
+        border-radius: 28px;
+        padding: 32px;
+        border: 1px solid var(--border);
+        box-shadow:
+          0 20px 40px rgba(0, 0, 0, 0.8),
+          0 0 0 1px rgba(16, 185, 129, 0.1);
+      }
+
+      .header {
+        margin-bottom: 32px;
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 20px;
+      }
+
+      .domain {
+        font-size: 2.4rem;
+        font-weight: 700;
+        color: #fff;
+        border-left: 4px solid var(--glow);
+        padding-left: 16px;
+        margin: 0 0 8px 0;
+        line-height: 1.2;
+        text-shadow: 0 0 12px rgba(16, 185, 129, 0.6);
+        letter-spacing: 1px;
+      }
+
+      .badge {
+        display: inline-block;
+        color: var(--text-dim);
+        font-size: 0.8rem;
+        font-family: monospace;
+        border: 1px solid var(--border);
+        padding: 4px 12px;
+        border-radius: 40px;
+        margin-left: 20px;
+        letter-spacing: 0.5px;
+      }
+
+      /* Language Switcher */
+      .lang-switcher {
+        display: flex;
+        gap: 16px;
+        margin-bottom: 24px;
+        justify-content: flex-end;
+      }
+
+      .lang-switcher a {
+        color: var(--text-dim);
+        text-decoration: none;
+        font-size: 0.8rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        padding-bottom: 4px;
+        border-bottom: 2px solid transparent;
+        transition: all 0.2s;
+      }
+
+      .lang-switcher a:hover,
+      .lang-switcher a.active {
+        color: var(--glow);
+        border-bottom-color: var(--glow);
+        text-shadow: 0 0 8px var(--glow);
+      }
+
+      /* Injected Markdown Content */
+      .content {
+        color: #ddd;
+        font-size: 1rem;
+        line-height: 1.7;
+      }
+
+      .content h1,
+      .content h2,
+      .content h3 {
+        color: #fff;
+        margin-top: 1.5em;
+        margin-bottom: 0.5em;
+        font-weight: 600;
+        letter-spacing: -0.01em;
+      }
+
+      .content h1 {
+        font-size: 1.8rem;
+        border-left: 3px solid var(--glow);
+        padding-left: 16px;
+      }
+
+      .content h2 {
+        font-size: 1.4rem;
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 8px;
+      }
+
+      .content p {
+        margin-bottom: 1.2em;
+      }
+
+      .content ul,
+      .content ol {
+        margin: 1em 0 1.5em 1.5em;
+      }
+
+      .content li {
+        margin-bottom: 0.4em;
+      }
+
+      .content a {
+        color: var(--glow);
+        text-decoration: none;
+        border-bottom: 1px solid rgba(16, 185, 129, 0.3);
+        transition: border 0.2s;
+      }
+
+      .content a:hover {
+        border-bottom-color: var(--glow);
+      }
+
+      .content code {
+        background: rgba(255, 255, 255, 0.05);
+        padding: 2px 6px;
+        border-radius: 6px;
+        font-family: "Cascadia Code", monospace;
+        font-size: 0.9em;
+        color: var(--glow);
+        border: 1px solid var(--border);
+      }
+
+      .content pre {
+        background: #0a0a0a;
+        padding: 16px;
+        border-radius: 12px;
+        overflow-x: auto;
+        border: 1px solid var(--border);
+        margin: 1.5em 0;
+      }
+
+      .footer {
+        margin-top: 40px;
+        border-top: 1px solid var(--border);
+        padding: 24px 0 8px;
+        text-align: center;
+        color: var(--text-dim);
+        font-size: 0.8rem;
+        letter-spacing: 0.5px;
+      }
+
+      .footer a {
+        color: var(--text-dim);
+        text-decoration: none;
+        margin: 0 8px;
+      }
+
+      .footer a:hover {
+        color: var(--glow);
+      }
+
+      @media (max-width: 480px) {
+        .container {
+          padding: 20px;
+        }
+        .domain {
+          font-size: 1.8rem;
+        }
+        .lang-switcher {
+          justify-content: center;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="domain">LEGAL.AF</div>
+        <div
+          style="
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          "
+        >
+          <span class="badge">⚖️ KBL v3.0 · L3373.XYZ</span>
+        </div>
+      </div>
+
+      <!-- Language Switcher (Hardcoded for simplicity) -->
+      <div class="lang-switcher">
+        <a href="/ru/">🇷🇺 РУС</a>
+        <a href="/en/">🇬🇧 ENG</a>
+        <a href="/cu/">✝️ ПРАВДА</a>
+      </div>
+
+      <!-- MAGIC PLACEHOLDER FOR PANDOC -->
+      <div class="content">{{CONTENT}}</div>
+
+      <div class="footer">
+        <div>🐎 Кони не бросают коней. Даже в суде.</div>
+        <div style="margin-top: 16px">
+          <a href="https://l3373.xyz">L3373.XYZ</a> ·
+          <a href="https://github.com/shmandalf/af-legal">GitHub</a> ·
+          <a href="https://fast.af.l3373.xyz">FAST.AF</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

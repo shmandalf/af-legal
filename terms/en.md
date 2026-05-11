@@ -2,7 +2,7 @@ This document defines the rules for using my projects, code, content, and for in
 
 ## 1. Code and Content License (KBL v3.0)
 
-All software code hosted in the `shmandalf` repositories is distributed under the **KoneBratstvo License (KBL) v3.0**, unless explicitly stated otherwise.
+All software code hosted in the `centaur-vova` repositories is distributed under the **KoneBratstvo License (KBL) v3.0**, unless explicitly stated otherwise.
 
 **KBL v3.0 is more than a software license. It is a manifesto of interaction.**
 
